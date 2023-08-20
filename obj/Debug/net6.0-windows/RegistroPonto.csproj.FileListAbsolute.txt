@@ -37,3 +37,5 @@ C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\obj\Debug\net6.0-wi
 C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\obj\Debug\net6.0-windows\RegistroPonto.pdb
 C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\obj\Debug\net6.0-windows\RegistroPonto.genruntimeconfig.cache
 C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\obj\Debug\net6.0-windows\ref\RegistroPonto.dll
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\obj\Debug\net6.0-windows\Login.baml
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\obj\Debug\net6.0-windows\Login.g.cs

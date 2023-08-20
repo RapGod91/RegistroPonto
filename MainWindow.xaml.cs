@@ -26,6 +26,14 @@ namespace RegistroPonto
 
             DataContext = new FuncionarioViewModel();
         }
+
+        private void GerenciarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Login loginWindow = new Login();
+            loginWindow.Show(); 
+            Close(); 
+        }
+
     }
 }
  

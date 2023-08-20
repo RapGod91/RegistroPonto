@@ -6,7 +6,39 @@
         xmlns:local="clr-namespace:RegistroPonto"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="CircularButton" TargetType="Button">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="200"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
+        
+        <Button Content="Registrar Ponto" 
+                Style="{StaticResource CircularButton}" 
+                Background="Green" 
+                VerticalAlignment="Center" HorizontalAlignment="Left"
+                Margin="20"/>
 
+        
+        <Button Content="Gerenciar" 
+                Style="{StaticResource CircularButton}" 
+                Background="Green" 
+                VerticalAlignment="Center" HorizontalAlignment="Right"
+                Margin="20"
+                Click="GerenciarButton_Click"/>
+
+        
     </Grid>
 </Window>
