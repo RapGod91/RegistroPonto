@@ -1,0 +1,12 @@
+<Window x:Class="RegistroPonto.Views.RegistrarPontoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registrar Ponto" Height="200" Width="300">
+    <Grid>
+        <TextBlock Text="Registrar Ponto" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" FontSize="18" />
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">
+            <TextBox Name="idTextBox" Width="150" Margin="0,10" Text="Insira o ID do Funcionário" />
+            <Button Content="OK" Width="100" Command="{Binding RegistrarPontoCommand}" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\App.xaml
-3754828538
+5-1003464808
 
-11-544328384
+14445591683
 200-1167799087
-FuncionarioView.xaml;Login.xaml;MainWindow.xaml;
+Views\FolhaPontoView.xaml;Views\GerenciarView.xaml;Views\GestaoView.xaml;Views\MainWindow.xaml;Views\RegistrarPontoView.xaml;
 
 False
 
