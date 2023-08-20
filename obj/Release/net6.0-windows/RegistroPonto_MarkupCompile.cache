@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\obj\Debug\net6.0-windows\
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\obj\Release\net6.0-windows\
 RegistroPonto
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\App.xaml
 5-1003464808
 
