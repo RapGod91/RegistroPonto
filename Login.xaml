@@ -3,12 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Login" Height="450" Width="800">
     <Grid>
-
         <Button Content="Voltar"
-        HorizontalAlignment="Left" VerticalAlignment="Top"
-        Margin="20"
-        Click="VoltarButton_Click"/>
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="20"
+                Click="VoltarButton_Click"/>
 
-        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="LoginTextBox" Width="200" Margin="0,0,0,10"
+                     Text="Usuário"/>
+            <PasswordBox x:Name="SenhaPasswordBox" Width="200" Margin="0,0,0,10"
+                         Password="Senha"/>
+            <Button Content="OK" Width="100" Click="OKButton_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
