@@ -26,6 +26,11 @@ namespace RegistroPonto
             {
                 // Login bem-sucedido
                 MessageBox.Show($"Bem-vindo, {usuario}!");
+
+                Gestao gestaoWindow = new Gestao();
+                gestaoWindow.Show(); 
+                Close(); 
+                                
             }
             else
             {
