@@ -1243,7 +1243,8 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "Dapper >= 2.0.151",
-      "System.Data.SQLite >= 1.0.118"
+      "System.Data.SQLite >= 1.0.118",
+      "System.Data.SQLite.Core >= 1.0.118"
     ]
   },
   "packageFolders": {
@@ -1290,6 +1291,10 @@
             "version": "[2.0.151, )"
           },
           "System.Data.SQLite": {
+            "target": "Package",
+            "version": "[1.0.118, )"
+          },
+          "System.Data.SQLite.Core": {
             "target": "Package",
             "version": "[1.0.118, )"
           }

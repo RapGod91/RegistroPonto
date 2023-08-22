@@ -12,5 +12,23 @@ namespace RegistroPonto.Repositories
             connection.Open();
             return connection;
         }
+
+        public void CreateFuncionarioTable()
+        {
+            using (var connection = CreateConnection())
+            {
+                using (var command = new SQLiteCommand(connection))
+                {
+                    command.CommandText = @"
+                        CREATE TABLE IF NOT EXISTS Funcionarios (
+                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            Nome TEXT,
+                            Cargo TEXT,
+                            FotoPath TEXT
+                        )";
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

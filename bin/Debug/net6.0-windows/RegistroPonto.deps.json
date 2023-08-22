@@ -9,7 +9,8 @@
       "RegistroPonto/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.151",
-          "System.Data.SQLite": "1.0.118"
+          "System.Data.SQLite": "1.0.118",
+          "System.Data.SQLite.Core": "1.0.118"
         },
         "runtime": {
           "RegistroPonto.dll": {}
