@@ -9,5 +9,11 @@
                 Click="DeslogarButton_Click"/>
 
         <TextBlock Text="Tela de Gestão" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button x:Name="cadastrarFuncionarioButton" Content="Cadastrar Funcionário" 
+        HorizontalAlignment="Left" VerticalAlignment="Bottom"
+        Margin="20"
+        Click="CadastrarFuncionarioButton_Click"/>
+
     </Grid>
 </Window>
