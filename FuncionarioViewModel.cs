@@ -28,6 +28,18 @@ namespace RegistroPonto.ViewModels
 
         private void CadastrarFuncionario(object parameter)
         {
+            Funcionario novoFuncionario = new Funcionario
+            {
+                Nome = "Novo Funcionário",
+                Cargo = "Desconhecido",
+                FotoPath = "CaminhoDaFoto"
+            };
+
+            // Chamar o método de cadastro do repositório
+            _funcionarioRepository.CadastrarFuncionario(novoFuncionario);
+
+            // Adicionar o funcionário recém-cadastrado à coleção
+            Funcionarios.Add(novoFuncionario);
             
         }
 
