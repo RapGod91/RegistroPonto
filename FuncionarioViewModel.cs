@@ -28,6 +28,8 @@ namespace RegistroPonto.ViewModels
             Funcionarios = new ObservableCollection<Funcionario>();
 
             CadastrarFuncionarioCommand = new RelayCommand(CadastrarFuncionario);
+
+            ExcluirFuncionarioCommand = new RelayCommand(ExcluirFuncionario);
             
         }
 
@@ -50,13 +52,24 @@ namespace RegistroPonto.ViewModels
 
         private void AtualizarFuncionario(object parameter)
         {
-            _funcionarioRepository.AtualizarFuncionario(FuncionarioSelecionado);
+            if (FuncionarioSelecionado != null)
+            {
+                // Atualizar os detalhes do funcionário selecionado
+                FuncionarioSelecionado.Nome = FuncionarioSelecionado.Nome; // Não é necessário alterar o nome
+        FuncionarioSelecionado.Cargo = FuncionarioSelecionado.Cargo; // Não é necessário alterar o cargo
+
+        // Chamar o método de atualização do repositório
+        _funcionarioRepository.AtualizarFuncionario(FuncionarioSelecionado);
+            }
         }
 
         private void ExcluirFuncionario(object parameter)
         {
-            _funcionarioRepository.ExcluirFuncionario(FuncionarioSelecionado);
-            Funcionarios.Remove(FuncionarioSelecionado);
+            if (FuncionarioSelecionado != null)
+            {
+                _funcionarioRepository.ExcluirFuncionario(FuncionarioSelecionado);
+                Funcionarios.Remove(FuncionarioSelecionado);
+            }
         }
 
         private Funcionario BuscarFuncionarioPorId(int id)
