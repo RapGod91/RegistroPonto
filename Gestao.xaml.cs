@@ -2,6 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using RegistroPonto.Repositories;
 using RegistroPonto.Models;
+using RegistroPonto.ViewModels;
 
 namespace RegistroPonto
 {
@@ -12,6 +13,8 @@ namespace RegistroPonto
             InitializeComponent();
 
             InitializeDatabase();
+
+            DataContext = new FuncionarioViewModel();
         }
 
         private void InitializeDatabase()
@@ -28,6 +31,10 @@ namespace RegistroPonto
         }
         private void CadastrarFuncionarioButton_Click(object sender, RoutedEventArgs e)
         {
+            
+            ((FuncionarioViewModel)DataContext).CadastrarFuncionarioCommand.Execute(null);
+            
+            /*
             // Crie um objeto Funcionario com os dados do novo funcionário
             var novoFuncionario = new Funcionario
             {
@@ -44,6 +51,7 @@ namespace RegistroPonto
             funcionarioRepository.CadastrarFuncionario(novoFuncionario);
 
             // Você pode adicionar aqui uma mensagem de sucesso, atualizar a lista de funcionários exibidos na interface, etc.
+            */
         }
         
     }
