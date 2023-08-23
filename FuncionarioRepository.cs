@@ -21,5 +21,32 @@ namespace RegistroPonto.Repositories
                 connection.Execute(sql, funcionario);
             }
         }
+        public void AtualizarFuncionario(Funcionario funcionario)
+        {
+            using (var connection = _databaseContext.CreateConnection())
+            {
+                const string sql = "UPDATE Funcionarios SET Nome = @Nome, Cargo = @Cargo, FotoPath = @FotoPath WHERE Id = @Id";
+                connection.Execute(sql, funcionario);
+            }
+        }
+
+        public void ExcluirFuncionario(Funcionario funcionario)
+        {
+            using (var connection = _databaseContext.CreateConnection())
+            {
+                const string sql = "DELETE FROM Funcionarios WHERE Id = @Id";
+                connection.Execute(sql, funcionario);
+            }
+        }
+
+        public Funcionario BuscarFuncionarioPorId(int id)
+        {
+            using (var connection = _databaseContext.CreateConnection())
+            {
+                const string sql = "SELECT * FROM Funcionarios WHERE Id = @Id";
+                return connection.QueryFirstOrDefault<Funcionario>(sql, new { Id = id });
+            }
+        }
+
     }
 }

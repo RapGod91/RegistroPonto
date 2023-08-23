@@ -43,6 +43,24 @@ namespace RegistroPonto.ViewModels
             
         }
 
+        private void AtualizarFuncionario(Funcionario funcionario)
+        {
+            _funcionarioRepository.AtualizarFuncionario(funcionario);
+        }
+
+        private void ExcluirFuncionario(Funcionario funcionario)
+        {
+            _funcionarioRepository.ExcluirFuncionario(funcionario);
+            Funcionarios.Remove(funcionario);
+        }
+
+        private Funcionario BuscarFuncionarioPorId(int id)
+        {
+            return _funcionarioRepository.BuscarFuncionarioPorId(id);
+        }
+
+
+
         
         public event PropertyChangedEventHandler PropertyChanged;
     }
