@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using RegistroPonto.Models;
 using RegistroPonto.Repositories;
@@ -12,7 +13,11 @@ namespace RegistroPonto.ViewModels
 
         public ObservableCollection<Funcionario> Funcionarios { get; set; }
 
+        public Funcionario FuncionarioSelecionado { get; set; } // Adicione esta propriedade
+
         public ICommand CadastrarFuncionarioCommand { get; }
+        public ICommand AtualizarFuncionarioCommand { get; }
+        public ICommand ExcluirFuncionarioCommand { get; }
 
         public FuncionarioViewModel()
         {
@@ -43,25 +48,26 @@ namespace RegistroPonto.ViewModels
             
         }
 
-        private void AtualizarFuncionario(Funcionario funcionario)
+        private void AtualizarFuncionario(object parameter)
         {
-            _funcionarioRepository.AtualizarFuncionario(funcionario);
+            _funcionarioRepository.AtualizarFuncionario(FuncionarioSelecionado);
         }
 
-        private void ExcluirFuncionario(Funcionario funcionario)
+        private void ExcluirFuncionario(object parameter)
         {
-            _funcionarioRepository.ExcluirFuncionario(funcionario);
-            Funcionarios.Remove(funcionario);
+            _funcionarioRepository.ExcluirFuncionario(FuncionarioSelecionado);
+            Funcionarios.Remove(FuncionarioSelecionado);
         }
 
         private Funcionario BuscarFuncionarioPorId(int id)
         {
             return _funcionarioRepository.BuscarFuncionarioPorId(id);
-        }
-
-
-
+        }        
         
         public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
