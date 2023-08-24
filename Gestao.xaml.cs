@@ -1,5 +1,9 @@
+using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Win32;
+using System.Windows.Media.Imaging;
 using RegistroPonto.Repositories;
 using RegistroPonto.Models;
 using RegistroPonto.ViewModels;
@@ -8,13 +12,19 @@ namespace RegistroPonto
 {
     public partial class Gestao : Window
     {
+        
+        private FuncionarioViewModel _viewModel;
+
+        public Funcionario NovoFuncionario { get; set; } = new Funcionario();
         public Gestao()
         {
             InitializeComponent();
 
             InitializeDatabase();
 
-            DataContext = new FuncionarioViewModel();
+            _viewModel = new FuncionarioViewModel();
+
+            DataContext = _viewModel;
         }
 
         private void InitializeDatabase()
@@ -53,6 +63,23 @@ namespace RegistroPonto
             // Você pode adicionar aqui uma mensagem de sucesso, atualizar a lista de funcionários exibidos na interface, etc.
             */
         }
+        private void SelecionarFotoButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Imagens (*.jpg, *.png)|*.jpg;*.png|Todos os arquivos (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Atualize a propriedade FotoPath do NovoFuncionario
+                NovoFuncionario.FotoPath = openFileDialog.FileName;
+
+                // Atualize a imagem exibida
+                FotoImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+            }
+        }
+
+
+
+
         
     }
 }

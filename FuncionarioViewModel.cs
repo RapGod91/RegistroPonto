@@ -5,6 +5,7 @@ using System.Windows.Input;
 using RegistroPonto.Models;
 using RegistroPonto.Repositories;
 
+
 namespace RegistroPonto.ViewModels
 {
     public class FuncionarioViewModel : INotifyPropertyChanged
@@ -13,7 +14,30 @@ namespace RegistroPonto.ViewModels
 
         public ObservableCollection<Funcionario> Funcionarios { get; set; }
 
-        public Funcionario FuncionarioSelecionado { get; set; } // Adicione esta propriedade
+        private Funcionario _funcionarioSelecionado;
+        public Funcionario FuncionarioSelecionado
+        {
+            get { return _funcionarioSelecionado; }
+            set
+            {
+                _funcionarioSelecionado = value;
+                OnPropertyChanged(nameof(FuncionarioSelecionado));
+
+                // Atualize a exibição da foto quando um funcionário for selecionado
+                FotoPath = _funcionarioSelecionado?.FotoPath;
+            }
+        }
+        
+        private string _fotoPath;
+        public string FotoPath
+        {
+            get { return _fotoPath; }
+            set
+            {
+                _fotoPath = value;
+                OnPropertyChanged(nameof(FotoPath));
+            }
+        }
 
         public ICommand CadastrarFuncionarioCommand { get; }
         public ICommand AtualizarFuncionarioCommand { get; }
