@@ -27,7 +27,7 @@ namespace RegistroPonto.ViewModels
                 FotoPath = _funcionarioSelecionado?.FotoPath;
             }
         }
-        
+
         private string _fotoPath;
         public string FotoPath
         {
@@ -71,6 +71,8 @@ namespace RegistroPonto.ViewModels
 
             // Adicionar o funcionário recém-cadastrado à coleção
             Funcionarios.Add(novoFuncionario);
+
+            OnPropertyChanged(nameof(Funcionarios));
             
         }
 
@@ -80,10 +82,11 @@ namespace RegistroPonto.ViewModels
             {
                 // Atualizar os detalhes do funcionário selecionado
                 FuncionarioSelecionado.Nome = FuncionarioSelecionado.Nome; // Não é necessário alterar o nome
-        FuncionarioSelecionado.Cargo = FuncionarioSelecionado.Cargo; // Não é necessário alterar o cargo
+                FuncionarioSelecionado.Cargo = FuncionarioSelecionado.Cargo; // Não é necessário alterar o cargo
 
-        // Chamar o método de atualização do repositório
-        _funcionarioRepository.AtualizarFuncionario(FuncionarioSelecionado);
+                // Chamar o método de atualização do repositório
+                _funcionarioRepository.AtualizarFuncionario(FuncionarioSelecionado);
+                OnPropertyChanged(nameof(Funcionarios));
             }
         }
 
@@ -93,6 +96,7 @@ namespace RegistroPonto.ViewModels
             {
                 _funcionarioRepository.ExcluirFuncionario(FuncionarioSelecionado);
                 Funcionarios.Remove(FuncionarioSelecionado);
+                OnPropertyChanged(nameof(Funcionarios));
             }
         }
 
@@ -106,5 +110,6 @@ namespace RegistroPonto.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        
     }
 }
