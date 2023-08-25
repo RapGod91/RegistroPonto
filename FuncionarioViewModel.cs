@@ -46,24 +46,23 @@ namespace RegistroPonto.ViewModels
         public FuncionarioViewModel()
         {
             var databaseContext = new DatabaseContext(); 
-            
             _funcionarioRepository = new FuncionarioRepository(databaseContext);
 
             Funcionarios = new ObservableCollection<Funcionario>();
 
             CadastrarFuncionarioCommand = new RelayCommand(CadastrarFuncionario);
-
+            AtualizarFuncionarioCommand = new RelayCommand(AtualizarFuncionario);
             ExcluirFuncionarioCommand = new RelayCommand(ExcluirFuncionario);
-            
         }
+
 
         private void CadastrarFuncionario(object parameter)
         {
             Funcionario novoFuncionario = new Funcionario
             {
-                Nome = "Novo Funcionário",
-                Cargo = "Desconhecido",
-                FotoPath = "CaminhoDaFoto"
+                Nome = NovoFuncionarioNome,
+                Cargo = NovoFuncionarioCargo,
+                FotoPath = FotoPath // Use a propriedade FotoPath diretamente, se ela estiver sendo atualizada corretamente
             };
 
             // Chamar o método de cadastro do repositório
@@ -73,8 +72,33 @@ namespace RegistroPonto.ViewModels
             Funcionarios.Add(novoFuncionario);
 
             OnPropertyChanged(nameof(Funcionarios));
-            
         }
+
+
+        private string _novoFuncionarioNome;
+        public string NovoFuncionarioNome
+        {
+            get { return _novoFuncionarioNome; }
+            set
+            {
+                _novoFuncionarioNome = value;
+                OnPropertyChanged(nameof(NovoFuncionarioNome));
+            }
+        }
+
+        private string _novoFuncionarioCargo;
+        public string NovoFuncionarioCargo
+        {
+            get { return _novoFuncionarioCargo; }
+            set
+            {
+                _novoFuncionarioCargo = value;
+                OnPropertyChanged(nameof(NovoFuncionarioCargo));
+            }
+        }
+
+
+
 
         private void AtualizarFuncionario(object parameter)
         {

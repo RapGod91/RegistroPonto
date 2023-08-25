@@ -39,34 +39,6 @@ namespace RegistroPonto
             loginWindow.Show();
             this.Close();
         }
-        
-        
-        
-        /*
-        private void CadastrarFuncionarioButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            ((FuncionarioViewModel)DataContext).CadastrarFuncionarioCommand.Execute(null);
-                        
-        }
-        */
-        /*
-
-        private void CadastrarFuncionarioButton_Click(object sender, RoutedEventArgs e)
-        {
-            _viewModel.CadastrarFuncionarioCommand.Execute(null);
-        }
-
-        private void AtualizarFuncionarioButton_Click(object sender, RoutedEventArgs e)
-        {
-            _viewModel.AtualizarFuncionarioCommand.Execute(null);
-        }
-
-        private void ExcluirFuncionarioButton_Click(object sender, RoutedEventArgs e)
-        {
-            _viewModel.ExcluirFuncionarioCommand.Execute(null);
-        }
-        */
 
         private void SelecionarFotoButton_Click(object sender, RoutedEventArgs e)
         {
@@ -82,6 +54,6 @@ namespace RegistroPonto
             }
         }
 
-        
+                
     }
 }
