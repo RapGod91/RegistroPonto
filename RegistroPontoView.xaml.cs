@@ -9,5 +9,12 @@ namespace RegistroPonto.Views
         {
             InitializeComponent();
         }
+
+        private void VoltarButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }
