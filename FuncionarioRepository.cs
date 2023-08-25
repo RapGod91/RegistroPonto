@@ -1,6 +1,7 @@
 using Dapper;
 using RegistroPonto.Models;
-
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RegistroPonto.Repositories
 {
@@ -47,6 +48,17 @@ namespace RegistroPonto.Repositories
                 return connection.QueryFirstOrDefault<Funcionario>(sql, new { Id = id });
             }
         }
+        public List<Funcionario> ObterTodosFuncionarios()
+        {
+            using (var connection = _databaseContext.CreateConnection())
+            {
+                const string sql = "SELECT * FROM Funcionarios";
+                return connection.Query<Funcionario>(sql).ToList();
+            }
+        }
+        
+
+
 
     }
 }

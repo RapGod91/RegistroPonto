@@ -56,9 +56,24 @@ namespace RegistroPonto.ViewModels
 
             Funcionarios = new ObservableCollection<Funcionario>();
 
+            CarregarFuncionarios();
+            
             CadastrarFuncionarioCommand = new RelayCommand(CadastrarFuncionario);
             AtualizarFuncionarioCommand = new RelayCommand(AtualizarFuncionario);
             ExcluirFuncionarioCommand = new RelayCommand(ExcluirFuncionario);
+        }
+
+        private void CarregarFuncionarios()
+        {
+            // Limpar a coleção antes de recarregar os dados
+            Funcionarios.Clear();
+
+            // Carregar os funcionários do banco de dados e adicioná-los à coleção
+            var funcionariosDoBanco = _funcionarioRepository.ObterTodosFuncionarios();
+            foreach (var funcionario in funcionariosDoBanco)
+            {
+                Funcionarios.Add(funcionario);
+            }
         }
 
 
@@ -74,6 +89,7 @@ namespace RegistroPonto.ViewModels
             // Chamar o método de cadastro do repositório
             _funcionarioRepository.CadastrarFuncionario(novoFuncionario);
 
+            
             // Adicionar o funcionário recém-cadastrado à coleção
             Funcionarios.Add(novoFuncionario);
 

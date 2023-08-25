@@ -15,7 +15,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">                        
-                        <TextBlock Text="{Binding Id}" Width="30" VerticalAlignment="Center" />                        
+                        <TextBlock Text="{Binding Id}" Width="30" VerticalAlignment="Center" />
                         <TextBlock Text="{Binding Nome}" VerticalAlignment="Center" />
                         <TextBlock Text="{Binding Cargo}" VerticalAlignment="Center" Margin="10,0,0,0" />
                         <Image Source="{Binding FotoPath}" Width="50" Height="50" Margin="5" />
