@@ -124,15 +124,11 @@ namespace RegistroPonto.ViewModels
         {
             if (FuncionarioSelecionado != null)
             {
-                // Atualizar os detalhes do funcionário selecionado
-                FuncionarioSelecionado.Nome = FuncionarioSelecionado.Nome; // Não é necessário alterar o nome
-                FuncionarioSelecionado.Cargo = FuncionarioSelecionado.Cargo; // Não é necessário alterar o cargo
-
                 // Chamar o método de atualização do repositório
                 _funcionarioRepository.AtualizarFuncionario(FuncionarioSelecionado);
-                OnPropertyChanged(nameof(Funcionarios));
             }
         }
+
 
         private void ExcluirFuncionario(object parameter)
         {

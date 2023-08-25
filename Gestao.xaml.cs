@@ -7,6 +7,8 @@ using System.Windows.Media.Imaging;
 using RegistroPonto.Repositories;
 using RegistroPonto.Models;
 using RegistroPonto.ViewModels;
+using System.Windows.Data;
+
 
 namespace RegistroPonto
 {
@@ -53,7 +55,7 @@ namespace RegistroPonto
                 FotoImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
         }
-
+        
 
 
                 
