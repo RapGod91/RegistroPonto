@@ -46,13 +46,15 @@ namespace RegistroPonto
             openFileDialog.Filter = "Imagens (*.jpg, *.png)|*.jpg;*.png|Todos os arquivos (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                // Atualize a propriedade FotoPath do NovoFuncionario
-                NovoFuncionario.FotoPath = openFileDialog.FileName;
+                // Atualize a propriedade FotoPath no ViewModel
+                ((FuncionarioViewModel)DataContext).AtualizarFotoPath(openFileDialog.FileName);
 
                 // Atualize a imagem exibida
                 FotoImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
         }
+
+
 
                 
     }

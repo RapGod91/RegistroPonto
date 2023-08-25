@@ -14,9 +14,11 @@
         <ListBox ItemsSource="{Binding Funcionarios}" SelectedItem="{Binding FuncionarioSelecionado}" Margin="20,60,20,110">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding FotoPath}" Width="50" Height="50" Margin="5" />
+                    <StackPanel Orientation="Horizontal">                        
+                        <TextBlock Text="{Binding Id}" Width="30" VerticalAlignment="Center" />                        
                         <TextBlock Text="{Binding Nome}" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding Cargo}" VerticalAlignment="Center" Margin="10,0,0,0" />
+                        <Image Source="{Binding FotoPath}" Width="50" Height="50" Margin="5" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -31,7 +33,7 @@
                     
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,30">
-            <Image x:Name="FotoImage" Width="50" Height="50" Margin="5"/>
+            <Image x:Name="FotoImage" Width="50" Height="50" Source="{Binding FotoPath}" Margin="5"/>
             <Button Content="Selecionar Foto" Margin="5" Click="SelecionarFotoButton_Click"/>
             <Button Content="Cadastrar" Command="{Binding CadastrarFuncionarioCommand}" Margin="5"/>
             <Button Content="Atualizar" Command="{Binding AtualizarFuncionarioCommand}" Margin="5"/>

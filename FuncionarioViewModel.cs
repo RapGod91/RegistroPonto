@@ -39,6 +39,12 @@ namespace RegistroPonto.ViewModels
             }
         }
 
+        public void AtualizarFotoPath(string novoCaminho)
+        {
+            FotoPath = novoCaminho;
+        }
+
+
         public ICommand CadastrarFuncionarioCommand { get; }
         public ICommand AtualizarFuncionarioCommand { get; }
         public ICommand ExcluirFuncionarioCommand { get; }
@@ -97,9 +103,7 @@ namespace RegistroPonto.ViewModels
             }
         }
 
-
-
-
+        
         private void AtualizarFuncionario(object parameter)
         {
             if (FuncionarioSelecionado != null)
