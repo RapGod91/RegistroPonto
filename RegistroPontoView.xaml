@@ -1,0 +1,8 @@
+<Window x:Class="RegistroPonto.Views.RegistroPontoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registrar Ponto" Height="300" Width="400">
+    <Grid>
+        <!-- Conteúdo da Tela de Registrar Ponto -->
+    </Grid>
+</Window>

@@ -29,7 +29,9 @@
                 Style="{StaticResource CircularButton}" 
                 Background="Green" 
                 VerticalAlignment="Center" HorizontalAlignment="Left"
-                Margin="20"/>
+                Margin="20"
+                Click="RegistrarPontoButton_Click"/>
+
 
         
         <Button Content="Gerenciar" 

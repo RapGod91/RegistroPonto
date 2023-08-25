@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RegistroPonto.ViewModels;
+using RegistroPonto.Views;
 
 
 
@@ -33,6 +34,14 @@ namespace RegistroPonto
             loginWindow.Show(); 
             Close(); 
         }
+
+        private void RegistrarPontoButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegistroPontoView registroPontoView = new RegistroPontoView();
+            registroPontoView.Show();
+            Close(); 
+        }
+
 
     }
 }
