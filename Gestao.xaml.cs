@@ -39,30 +39,35 @@ namespace RegistroPonto
             loginWindow.Show();
             this.Close();
         }
+        
+        
+        
+        /*
         private void CadastrarFuncionarioButton_Click(object sender, RoutedEventArgs e)
         {
             
             ((FuncionarioViewModel)DataContext).CadastrarFuncionarioCommand.Execute(null);
-            
-            /*
-            // Crie um objeto Funcionario com os dados do novo funcionário
-            var novoFuncionario = new Funcionario
-            {
-                Nome = "Nome do Novo Funcionário",
-                Cargo = "Cargo do Novo Funcionário",
-                FotoPath = "Caminho da Foto"
-            };
-
-            var databaseContext = new DatabaseContext();
-            // Crie uma instância do repositório de funcionários
-            var funcionarioRepository = new FuncionarioRepository(databaseContext);
-
-            // Chame o método para cadastrar o novo funcionário
-            funcionarioRepository.CadastrarFuncionario(novoFuncionario);
-
-            // Você pode adicionar aqui uma mensagem de sucesso, atualizar a lista de funcionários exibidos na interface, etc.
-            */
+                        
         }
+        */
+        /*
+
+        private void CadastrarFuncionarioButton_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.CadastrarFuncionarioCommand.Execute(null);
+        }
+
+        private void AtualizarFuncionarioButton_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.AtualizarFuncionarioCommand.Execute(null);
+        }
+
+        private void ExcluirFuncionarioButton_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.ExcluirFuncionarioCommand.Execute(null);
+        }
+        */
+
         private void SelecionarFotoButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -76,9 +81,6 @@ namespace RegistroPonto
                 FotoImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
         }
-
-
-
 
         
     }

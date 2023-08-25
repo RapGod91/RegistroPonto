@@ -23,11 +23,12 @@
         </ListBox>
 
         <Label Content="Nome:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,70"/>
-        <TextBox x:Name="NomeTextBox" Text="{Binding NovoFuncionario.Nome}" HorizontalAlignment="Left" Width="200" VerticalAlignment="Bottom" Margin="70,0,0,70"/>
+        <TextBox x:Name="NomeTextBox" Text="{Binding NovoFuncionario.Nome, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Width="200" VerticalAlignment="Bottom" Margin="70,0,0,70"/>
 
+        
         <Label Content="Cargo:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,40"/>
-        <TextBox x:Name="CargoTextBox" Text="{Binding NovoFuncionario.Cargo}" HorizontalAlignment="Left" Width="200" VerticalAlignment="Bottom" Margin="70,0,0,40"/>
-                
+        <TextBox x:Name="CargoTextBox" Text="{Binding NovoFuncionario.Cargo, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Width="200" VerticalAlignment="Bottom" Margin="70,0,0,40"/>
+                    
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,30">
             <Image x:Name="FotoImage" Width="50" Height="50" Margin="5"/>
