@@ -8,6 +8,7 @@ using RegistroPonto.Repositories;
 using RegistroPonto.Models;
 using RegistroPonto.ViewModels;
 using System.Windows.Data;
+using RegistroPonto.Views;
 
 
 namespace RegistroPonto
@@ -54,6 +55,12 @@ namespace RegistroPonto
                 // Atualize a imagem exibida
                 FotoImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
+        }
+
+        private void FolhaPontoButton_Click(object sender, RoutedEventArgs e)
+        {
+            FolhaPonto folhaPontoWindow = new FolhaPonto();
+            folhaPontoWindow.ShowDialog();
         }
         
 

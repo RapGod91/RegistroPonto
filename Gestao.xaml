@@ -9,7 +9,10 @@
                 Margin="20"
                 Click="DeslogarButton_Click"/>
 
-        <TextBlock Text="Tela de Gestão" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+        <Button Content="Folha Ponto" Click="FolhaPontoButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20"/>
+
+
+        <TextBlock Text="Tela de Cadastro" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
 
         <ListBox ItemsSource="{Binding Funcionarios}" SelectedItem="{Binding FuncionarioSelecionado}" Margin="20,60,20,110">
             <ListBox.ItemTemplate>
