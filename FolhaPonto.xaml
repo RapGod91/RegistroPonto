@@ -3,9 +3,50 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Folha de Ponto" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
         <Button Content="Fechar"
                 HorizontalAlignment="Left" VerticalAlignment="Top"
                 Margin="20"
                 Click="VoltarButton_Click"/>
+
+        <DockPanel Grid.Row="0" Margin="10">
+            <Label Content="Buscar por Nome:" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            <TextBox x:Name="NomeFuncionarioTextBox" Width="200" Margin="5"/>
+            <Button Content="Buscar" Click="BuscarButton_Click" Margin="5"/>
+        </DockPanel>
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+                <Image x:Name="FotoFuncionarioImage" Width="150" Height="150" Margin="10"/>
+                <Label Content="ID do Funcionário:"/>
+                <TextBlock x:Name="IdFuncionarioTextBlock"/>
+                <Label Content="Nome do Funcionário:"/>
+                <TextBlock x:Name="NomeFuncionarioTextBlock"/>
+                <Label Content="Cargo do Funcionário:"/>
+                <TextBlock x:Name="CargoFuncionarioTextBlock"/>
+            </StackPanel>
+            
+            <ListView Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" x:Name="RegistroPontoListView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Data e Hora" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>
