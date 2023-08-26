@@ -29,7 +29,7 @@ namespace RegistroPonto.Repositories
         {
             using (var connection = _databaseContext.CreateConnection())
             {
-                const string sql = "SELECT * FROM RegistrosPonto WHERE FuncionarioId = @FuncionarioId";
+                const string sql = "SELECT * FROM RegistroPonto WHERE FuncionarioId = @FuncionarioId";
                 return connection.Query<RegistroPontoItem>(sql, new { FuncionarioId = funcionario.Id }).ToList();
             }
         }

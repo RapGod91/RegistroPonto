@@ -29,11 +29,11 @@
             <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
                 <Image x:Name="FotoFuncionarioImage" Width="150" Height="150" Margin="10"/>
                 <Label Content="ID do Funcionário:"/>
-                <TextBlock x:Name="IdFuncionarioTextBlock"/>
+                <TextBlock x:Name="IdFuncionarioTextBlock" Margin="10"/>
                 <Label Content="Nome do Funcionário:"/>
-                <TextBlock x:Name="NomeFuncionarioTextBlock"/>
+                <TextBlock x:Name="NomeFuncionarioTextBlock" Margin="10"/>
                 <Label Content="Cargo do Funcionário:"/>
-                <TextBlock x:Name="CargoFuncionarioTextBlock"/>
+                <TextBlock x:Name="CargoFuncionarioTextBlock" Margin="10"/>
                 <Button Content="Fechar"
                 HorizontalAlignment="Left" VerticalAlignment="Top"
                 Margin="20"

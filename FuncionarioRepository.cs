@@ -16,21 +16,18 @@ namespace RegistroPonto.Repositories
 
         private List<Funcionario> _funcionarios;
 
-        public FuncionarioRepository()
-        {
-            _funcionarios = new List<Funcionario>();
-            // Inicializar a lista de funcionários com dados de exemplo
-        }
+        
 
         // Método para buscar funcionário por nome
         public Funcionario BuscarFuncionarioPorNome(string nome)
         {
-            if (_funcionarios != null)
+            using (var connection = _databaseContext.CreateConnection())
             {
-                return _funcionarios.FirstOrDefault(f => f.Nome == nome);
+                const string sql = "SELECT * FROM Funcionarios WHERE Nome = @Nome";
+                return connection.QueryFirstOrDefault<Funcionario>(sql, new { Nome = nome });
             }
-            return null; // ou lançar uma exceção ou fazer algo apropriado caso a lista seja nula
         }
+
 
         
 
