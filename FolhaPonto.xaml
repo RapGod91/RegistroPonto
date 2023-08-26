@@ -8,11 +8,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <Button Content="Fechar"
-                HorizontalAlignment="Left" VerticalAlignment="Top"
-                Margin="20"
-                Click="VoltarButton_Click"/>
-
+        
         <DockPanel Grid.Row="0" Margin="10">
             <Label Content="Buscar por Nome:" VerticalAlignment="Center" DockPanel.Dock="Left"/>
             <TextBox x:Name="NomeFuncionarioTextBox" Width="200" Margin="5"/>
@@ -38,6 +34,10 @@
                 <TextBlock x:Name="NomeFuncionarioTextBlock"/>
                 <Label Content="Cargo do Funcionário:"/>
                 <TextBlock x:Name="CargoFuncionarioTextBlock"/>
+                <Button Content="Fechar"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="20"
+                Click="VoltarButton_Click"/>
             </StackPanel>
             
             <ListView Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" x:Name="RegistroPontoListView">
