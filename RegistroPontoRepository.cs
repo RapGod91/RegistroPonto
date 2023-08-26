@@ -1,4 +1,7 @@
 using Dapper;
+using RegistroPonto.Models;
+using System;
+using System.Data.SQLite;
 
 namespace RegistroPonto.Repositories
 {
@@ -11,6 +14,14 @@ namespace RegistroPonto.Repositories
             _databaseContext = databaseContext;
         }
 
-        
+        public void CriarTabelaRegistroPonto()
+        {
+            _databaseContext.CreateRegistroPontoTable();
+        }
+
+        public void InserirRegistroPonto(int funcionarioID, DateTime dataHora)
+        {
+            _databaseContext.InserirRegistroPonto(funcionarioID, dataHora);
+        }
     }
 }
