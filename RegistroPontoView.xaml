@@ -7,5 +7,11 @@
                 HorizontalAlignment="Left" VerticalAlignment="Top"
                 Margin="20"
                 Click="VoltarButton_Click"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="IdFuncionarioTextBox" HorizontalAlignment="Left" Width="200" Margin="20,10"/>
+            <Button Content="OK" HorizontalAlignment="Left" Margin="20,5" Click="OKButton_Click"/>
+
+        </StackPanel>
     </Grid>
 </Window>
