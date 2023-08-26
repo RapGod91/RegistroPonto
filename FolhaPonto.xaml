@@ -1,7 +1,7 @@
 <Window x:Class="RegistroPonto.Views.FolhaPonto"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Folha de Ponto" Height="450" Width="800">
+        Title="Folha de Ponto" Height="550" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
