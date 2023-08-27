@@ -47,9 +47,12 @@ namespace RegistroPonto.Views
                     // Exibir os registros de ponto do funcionário
                     List<RegistroPontoItem> registros = _registroPontoRepository.ObterRegistrosPontoPorFuncionario(funcionarioEncontrado);
 
+                    // Formatar os registros de ponto para exibição na primeira coluna
+                    var registrosFormatados = registros.Select(registro => new { Registro = registro.DataHora.ToString("dd/MM/yyyy HH:mm:ss"), DataAusente = string.Empty });
+
                     // Criar uma lista de todas as datas do mesmo mês do funcionário
-                    int year = DateTime.Now.Year; // Use o ano atual como exemplo, você pode ajustar conforme necessário
-                    int month = DateTime.Now.Month; // Use o mês atual como exemplo, você pode ajustar conforme necessário
+                    int year = DateTime.Now.Year;
+                    int month = DateTime.Now.Month;
 
                     List<DateTime> todasAsDatasDoMes = new List<DateTime>();
                     for (int day = 1; day <= DateTime.DaysInMonth(year, month); day++)
@@ -60,11 +63,13 @@ namespace RegistroPonto.Views
                     // Encontrar as datas ausentes comparando as listas de datas
                     List<DateTime> datasAusentes = todasAsDatasDoMes.Except(registros.Select(registro => registro.DataHora.Date)).ToList();
 
-                    // Formatar a lista de registros para exibição
-                    var registrosFormatados = registros.Select(registro => new { DataHoraFormatada = registro.DataHora.ToString("dd/MM/yyyy HH:mm:ss"), Ausente = false })
-                        .Concat(datasAusentes.Select(dataAusente => new { DataHoraFormatada = dataAusente.ToString("dd/MM/yyyy"), Ausente = true }));
+                    // Formatar as datas ausentes para exibição na segunda coluna
+                    var datasAusentesFormatadas = datasAusentes.Select(dataAusente => new { Registro = string.Empty, DataAusente = dataAusente.ToString("dd/MM/yyyy") });
 
-                    RegistroPontoListView.ItemsSource = registrosFormatados;
+                    // Combinar as listas de registros e datas ausentes formatadas
+                    var registrosEDataAusente = registrosFormatados.Concat(datasAusentesFormatadas);
+
+                    RegistroPontoListView.ItemsSource = registrosEDataAusente;
                 }
                 else
                 {
