@@ -53,6 +53,8 @@ Esta aplicação de Registro de Ponto é uma ferramenta simples para registrar o
 
 ## Problemas e Sugestões
 
+Para facilitar alterações no código, comentei a maior parte das classes e métodos.
+
 Se você encontrar problemas ou tiver sugestões para melhorias, sinta-se à vontade para abrir uma [issue](https://github.com/seu-usuario/seu-repositorio/issues) neste repositório.
 
 
