@@ -46,7 +46,11 @@ namespace RegistroPonto.Views
 
                     // Exibir os registros de ponto do funcionário
                     List<RegistroPontoItem> registros = _registroPontoRepository.ObterRegistrosPontoPorFuncionario(funcionarioEncontrado);
-                    RegistroPontoListView.ItemsSource = registros;
+
+                    // Formatar a lista de registros para exibição
+                    var registrosFormatados = registros.Select(registro => new { DataHoraFormatada = registro.DataHora.ToString("dd/MM/yyyy HH:mm:ss") });
+
+                    RegistroPontoListView.ItemsSource = registrosFormatados;
                 }
                 else
                 {

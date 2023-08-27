@@ -43,7 +43,7 @@
             <ListView Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" x:Name="RegistroPontoListView">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Data e Hora" Width="150"/>
+                        <GridViewColumn Header="Data e Hora" DisplayMemberBinding="{Binding DataHoraFormatada}" Width="150"/>
                     </GridView>
                 </ListView.View>
             </ListView>
