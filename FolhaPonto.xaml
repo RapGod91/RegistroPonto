@@ -44,6 +44,7 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Data e Hora" DisplayMemberBinding="{Binding DataHoraFormatada}" Width="150"/>
+                        <GridViewColumn Header="Ausente" DisplayMemberBinding="{Binding Ausente}" Width="150"/>
                     </GridView>
                 </ListView.View>
             </ListView>

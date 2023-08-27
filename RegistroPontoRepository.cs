@@ -15,7 +15,7 @@ namespace RegistroPonto.Repositories
             _databaseContext = databaseContext;
         }
 
-        // Método para obter registros de ponto por funcionário
+        
         public List<RegistroPontoItem> ObterRegistrosPontoPorFuncionario(Funcionario funcionario)
         {
             using (var connection = _databaseContext.CreateConnection())
