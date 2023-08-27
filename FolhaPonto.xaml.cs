@@ -70,6 +70,8 @@ namespace RegistroPonto.Views
                     var registrosEDataAusente = registrosFormatados.Concat(datasAusentesFormatadas);
 
                     RegistroPontoListView.ItemsSource = registrosEDataAusente;
+
+                    DiasAusentesTextBlock.Text = $"Dias Ausentes no Mês: {datasAusentes.Count}";
                 }
                 else
                 {
