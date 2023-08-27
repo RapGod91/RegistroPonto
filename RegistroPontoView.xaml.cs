@@ -1,6 +1,5 @@
 using System;
 using System.Windows;
-using System.Windows.Controls;
 using RegistroPonto.Models;
 using RegistroPonto.Repositories;
 

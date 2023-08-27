@@ -1,13 +1,10 @@
 using System;
-using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 using Microsoft.Win32;
 using System.Windows.Media.Imaging;
 using RegistroPonto.Repositories;
 using RegistroPonto.Models;
 using RegistroPonto.ViewModels;
-using System.Windows.Data;
 using RegistroPonto.Views;
 
 
