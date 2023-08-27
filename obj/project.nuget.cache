@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CjmLYWSXe4emD73xmfzPg0LB4laRUNhrpKZ2a8PUGxRRIFCYY8A2T6VfUBmc4sqGhWliHptd8rDHQ2ve/v485A==",
+  "dgSpecHash": "31Lwr8wW4qmh40yNUoR2VFmy5T9yf/3+jjuFZI7fJMm3EPmA0WyzdpsQDW2o7SEfg1rEAjb7U2XgTepdjz7VLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\0999\\05 - Programação\\RegistroPonto\\RegistroPonto.csproj",
   "expectedPackageFiles": [
@@ -27,7 +27,10 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.21\\microsoft.netcore.app.runtime.win-x64.6.0.21.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.21\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.21.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.21\\microsoft.aspnetcore.app.runtime.win-x64.6.0.21.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,0 +1,9 @@
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\RegistroPonto.pdb
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\D3DCompiler_47_cor3.dll
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\PenImc_cor3.dll
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\PresentationNative_cor3.dll
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\vcruntime140_cor3.dll
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\wpfgfx_cor3.dll
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\sni.dll
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\SQLite.Interop.dll
+C:\Users\Admin\Desktop\0999\05 - Programação\RegistroPonto\bin\Release\net6.0-windows\win-x64\publish\RegistroPonto.exe
