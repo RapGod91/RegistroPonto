@@ -10,10 +10,12 @@ namespace RegistroPonto.Views
 {
     public partial class FolhaPonto : Window
     {
+        //Variáveis de contexto e repositório
         private readonly DatabaseContext _databaseContext;
         private readonly FuncionarioRepository _funcionarioRepository; // Certifique-se de que esta linha está presente
         private readonly RegistroPontoRepository _registroPontoRepository; // Certifique-se de que esta linha está presente
 
+        //Construtor
         public FolhaPonto()
         {
             InitializeComponent();
@@ -23,12 +25,13 @@ namespace RegistroPonto.Views
         }
 
 
-        
+        //Evento para fechar a janela
         private void VoltarButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        //Evento para o botão Buscar
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             string nomeFuncionario = NomeFuncionarioTextBox.Text;
@@ -39,18 +42,19 @@ namespace RegistroPonto.Views
 
                 if (funcionarioEncontrado != null)
                 {
+                    //Preenche informações do funcionario
                     IdFuncionarioTextBlock.Text = funcionarioEncontrado.Id.ToString();
                     NomeFuncionarioTextBlock.Text = funcionarioEncontrado.Nome;
                     CargoFuncionarioTextBlock.Text = funcionarioEncontrado.Cargo;
                     FotoFuncionarioImage.Source = new BitmapImage(new Uri(funcionarioEncontrado.FotoPath));
 
-                    // Exibir os registros de ponto do funcionário
+                    // Exibe os registros de ponto do funcionário
                     List<RegistroPontoItem> registros = _registroPontoRepository.ObterRegistrosPontoPorFuncionario(funcionarioEncontrado);
 
-                    // Formatar os registros de ponto para exibição na primeira coluna
+                    // Formata os registros de ponto para exibição na primeira coluna
                     var registrosFormatados = registros.Select(registro => new { Registro = registro.DataHora.ToString("dd/MM/yyyy HH:mm:ss"), DataAusente = string.Empty });
 
-                    // Criar uma lista de todas as datas do mesmo mês do funcionário
+                    // Cria uma lista de todas as datas do mesmo mês do funcionário
                     int year = DateTime.Now.Year;
                     int month = DateTime.Now.Month;
 
@@ -60,17 +64,19 @@ namespace RegistroPonto.Views
                         todasAsDatasDoMes.Add(new DateTime(year, month, day));
                     }
 
-                    // Encontrar as datas ausentes comparando as listas de datas
+                    // Encontra as datas ausentes comparando as listas de datas
                     List<DateTime> datasAusentes = todasAsDatasDoMes.Except(registros.Select(registro => registro.DataHora.Date)).ToList();
 
-                    // Formatar as datas ausentes para exibição na segunda coluna
+                    // Formata as datas ausentes para exibição na segunda coluna
                     var datasAusentesFormatadas = datasAusentes.Select(dataAusente => new { Registro = string.Empty, DataAusente = dataAusente.ToString("dd/MM/yyyy") });
 
-                    // Combinar as listas de registros e datas ausentes formatadas
+                    // Combina as listas de registros e datas ausentes formatadas
                     var registrosEDataAusente = registrosFormatados.Concat(datasAusentesFormatadas);
 
+                    // Mostra registros de ponto e datas ausentes no ListView
                     RegistroPontoListView.ItemsSource = registrosEDataAusente;
 
+                    // Mostra quantidade de dias ausentes
                     DiasAusentesTextBlock.Text = $"Dias Ausentes no Mês: {datasAusentes.Count}";
                 }
                 else
@@ -86,10 +92,7 @@ namespace RegistroPonto.Views
             }
         }
 
-
-
-
-
+        //Limpa detalhes do funcion´pario
         private void LimparDetalhesFuncionario()
         {
             IdFuncionarioTextBlock.Text = string.Empty;

@@ -8,12 +8,15 @@ using RegistroPonto.Repositories;
 
 namespace RegistroPonto.ViewModels
 {
+    // Classe que fornece os dados e comportamentos relacionados a funcionários na interface
     public class FuncionarioViewModel : INotifyPropertyChanged
     {
         private readonly FuncionarioRepository _funcionarioRepository;
 
+        // Coleção de funcionários para exibição na interface
         public ObservableCollection<Funcionario> Funcionarios { get; set; }
 
+        // Funcionário selecionado na interface
         private Funcionario _funcionarioSelecionado;
         public Funcionario FuncionarioSelecionado
         {
@@ -23,11 +26,12 @@ namespace RegistroPonto.ViewModels
                 _funcionarioSelecionado = value;
                 OnPropertyChanged(nameof(FuncionarioSelecionado));
 
-                // Atualize a exibição da foto quando um funcionário for selecionado
+                // Atualiza a exibição da foto quando um funcionário for selecionado
                 FotoPath = _funcionarioSelecionado?.FotoPath;
             }
         }
 
+        // Caminho da foto do funcionário
         private string _fotoPath;
         public string FotoPath
         {
@@ -39,16 +43,19 @@ namespace RegistroPonto.ViewModels
             }
         }
 
+        // Método para atualizar o caminho da foto
         public void AtualizarFotoPath(string novoCaminho)
         {
             FotoPath = novoCaminho;
         }
 
 
+        // Comandos para interação com a interface
         public ICommand CadastrarFuncionarioCommand { get; }
         public ICommand AtualizarFuncionarioCommand { get; }
         public ICommand ExcluirFuncionarioCommand { get; }
 
+        //Construtor
         public FuncionarioViewModel()
         {
             var databaseContext = new DatabaseContext(); 
@@ -63,6 +70,7 @@ namespace RegistroPonto.ViewModels
             ExcluirFuncionarioCommand = new RelayCommand(ExcluirFuncionario);
         }
 
+        // Método para carregar funcionários do banco de dados na coleção
         private void CarregarFuncionarios()
         {
             // Limpar a coleção antes de recarregar os dados
@@ -77,13 +85,14 @@ namespace RegistroPonto.ViewModels
         }
 
 
+        //Método para cadastrar um novo funcionario
         private void CadastrarFuncionario(object parameter)
         {
             Funcionario novoFuncionario = new Funcionario
             {
                 Nome = NovoFuncionarioNome,
                 Cargo = NovoFuncionarioCargo,
-                FotoPath = FotoPath // Use a propriedade FotoPath diretamente, se ela estiver sendo atualizada corretamente
+                FotoPath = FotoPath 
             };
 
             // Chamar o método de cadastro do repositório
@@ -97,6 +106,7 @@ namespace RegistroPonto.ViewModels
         }
 
 
+        // Propriedades para a interface de cadastro de funcionários
         private string _novoFuncionarioNome;
         public string NovoFuncionarioNome
         {
@@ -120,6 +130,8 @@ namespace RegistroPonto.ViewModels
         }
 
         
+        // Métodos para atualizar e excluir funcionários
+        //Sendo que o atualizar será implementado posteriormente
         private void AtualizarFuncionario(object parameter)
         {
             if (FuncionarioSelecionado != null)
@@ -140,6 +152,7 @@ namespace RegistroPonto.ViewModels
             }
         }
 
+        //Método para buscar por ID
         private Funcionario BuscarFuncionarioPorId(int id)
         {
             return _funcionarioRepository.BuscarFuncionarioPorId(id);

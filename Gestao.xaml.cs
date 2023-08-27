@@ -13,6 +13,7 @@ using RegistroPonto.Views;
 
 namespace RegistroPonto
 {
+    //Classe da janela Gestão
     public partial class Gestao : Window
     {
         
@@ -30,12 +31,14 @@ namespace RegistroPonto
             DataContext = _viewModel;
         }
 
+        //Inicia o BD e cria tabela funcionarios
         private void InitializeDatabase()
         {
             var databaseContext = new DatabaseContext();
             databaseContext.CreateFuncionarioTable();
         }
 
+        //Evento para "Deslogar", fecha a janela atual e abre a de Login novamente
         private void DeslogarButton_Click(object sender, RoutedEventArgs e)
         {
             Login loginWindow = new Login();
@@ -43,6 +46,7 @@ namespace RegistroPonto
             this.Close();
         }
 
+        //Evento de "selecionar foto"
         private void SelecionarFotoButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -57,6 +61,7 @@ namespace RegistroPonto
             }
         }
 
+        //Evento para abrir em nova janela o Folha Ponto
         private void FolhaPontoButton_Click(object sender, RoutedEventArgs e)
         {
             FolhaPonto folhaPontoWindow = new FolhaPonto();

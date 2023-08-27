@@ -28,6 +28,7 @@ namespace RegistroPonto
             DataContext = new FuncionarioViewModel();
         }
 
+        //Abrir a janela Gerenciar
         private void GerenciarButton_Click(object sender, RoutedEventArgs e)
         {
             Login loginWindow = new Login();
@@ -35,6 +36,7 @@ namespace RegistroPonto
             Close(); 
         }
 
+        //Abrir a janela Registrar Ponto
         private void RegistrarPontoButton_Click(object sender, RoutedEventArgs e)
         {
             RegistroPontoView registroPontoView = new RegistroPontoView();
