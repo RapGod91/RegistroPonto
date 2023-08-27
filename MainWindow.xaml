@@ -29,17 +29,21 @@
                 Style="{StaticResource CircularButton}" 
                 Background="Green" 
                 VerticalAlignment="Center" HorizontalAlignment="Left"
-                Margin="20"
-                Click="RegistrarPontoButton_Click"/>
+                Margin="100"
+                Click="RegistrarPontoButton_Click"
+                FontSize="16"
+                FontWeight="Bold"/>
 
 
         
         <Button Content="Gerenciar" 
                 Style="{StaticResource CircularButton}" 
-                Background="Green" 
+                Background="#B22222" 
                 VerticalAlignment="Center" HorizontalAlignment="Right"
-                Margin="20"
-                Click="GerenciarButton_Click"/>
+                Margin="100"
+                Click="GerenciarButton_Click"
+                FontSize="16"
+                FontWeight="Bold"/>
 
         
     </Grid>

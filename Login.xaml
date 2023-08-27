@@ -9,6 +9,7 @@
                 Click="VoltarButton_Click"/>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Acesse com seu Usuário e Senha:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontWeight="Bold"/>
             <TextBox x:Name="LoginTextBox" Width="200" Margin="0,0,0,10"
                      Text="Usuário"/>
             <PasswordBox x:Name="SenhaPasswordBox" Width="200" Margin="0,0,0,10"
